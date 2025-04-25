@@ -16,11 +16,11 @@ folders = [args.source_dir+f for f in os.listdir(args.source_dir) if os.path.isd
 print(os.listdir(args.source_dir))
 
 for folder in tqdm(folders, desc="Renaming..."):
-    png_files = [f for f in os.listdir(folder) if f.endswith('.png')]
+    pic_files = [f for f in os.listdir(folder) if f.endswith(('jpg', 'jpeg', 'pic', 'bmp', 'gif'))]
 
-    png_files.sort()
+    pic_files.sort()
 
-    for i, file in enumerate(png_files, start=args.sn):
+    for i, file in enumerate(pic_files, start=args.sn):
         file_extension = os.path.splitext(file)[1]
         new_name = f"{str(i).zfill(args.zfill)}{file_extension}"
         old_file_path = os.path.join(folder, file)
