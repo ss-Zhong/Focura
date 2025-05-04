@@ -1,11 +1,15 @@
-# Focura
+# ✨Focura✨
 
 ![GitHub stars](https://img.shields.io/github/stars/ss-Zhong/Focura?style=flat&color=5caaf3)
 ![Visits](https://badges.pufler.dev/visits/ss-Zhong/Focura?color=47bdae)
 ![License](https://img.shields.io/github/license/ss-Zhong/Focura)
 ![Last commit](https://img.shields.io/github/last-commit/ss-Zhong/Focura)
 
+<img src="img/README/Focura_sample.png" style="zoom:67%;" />
+
 **Focura** is a dataset designed for image classification tasks, focusing on the clear separation of foreground and background elements. The name "Focura" is a fusion of "Focus" and "Aura," symbolizing the clarity and distinction between the foreground and background that this dataset aims to highlight.
+
+The dataset includes **10 specific scenes**, containing **10 object classes**, with **20 objects per class**. This setup ensures a diverse set of images for robust classification tasks.
 
 Special thanks to the contributors on [**Pexels**](https://www.pexels.com/) for providing the images used in this dataset.
 
