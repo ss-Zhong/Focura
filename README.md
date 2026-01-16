@@ -1,11 +1,18 @@
 # ✨Focura✨
 
-![GitHub stars](https://img.shields.io/github/stars/ss-Zhong/Focura?style=flat&color=5caaf3)
-![License](https://img.shields.io/github/license/ss-Zhong/Focura)
+> 🎉🎉 Congratulations! Our paper **"Glasses: Enabling Fast Environment-aware Few-Shot Learning via Device-Cloud Collaboration"** has been accepted to **The Web Conference 2026 (WWW'26)**! 
+
+<p align="center">
+  <a href="https://github.com/ss-Zhong/Focura/stargazers"><img src="https://img.shields.io/github/stars/ss-Zhong/Focura?style=for-the-badge&color=5caaf3" alt="Stars"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/ss-Zhong/Focura?style=for-the-badge&color=6c757d" alt="License"></a>
+  <a href="https://github.com/ss-Zhong/Focura/commits"><img src="https://img.shields.io/github/last-commit/ss-Zhong/Focura?style=for-the-badge&color=4c9f70" alt="Last Commit"></a>
+  <a href="https://github.com/ss-Zhong/Focura"><img src="https://img.shields.io/github/repo-size/ss-Zhong/Focura?style=for-the-badge&color=17a2b8" alt="Repo Size"></a>
+  <a href="https://github.com/ss-Zhong/Focura/issues"><img src="https://img.shields.io/github/issues/ss-Zhong/Focura?style=for-the-badge&color=f39c12" alt="Issues"></a>
+</p>
 
 <img src="img/README/Focura_sample.png" style="zoom:67%;" />
 
-**Focura** is a dataset designed for image classification tasks, focusing on the clear separation of foreground and background elements. The name "Focura" is a fusion of "Focus" and "Aura," symbolizing the clarity and distinction between the foreground and background that this dataset aims to highlight.
+**Focura** is a dataset designed for image classification tasks, focusing on the clear separation of foreground and background elements. The name "Focura" is a fusion of "Focus" and "Aura", symbolizing the clarity and distinction between the foreground and background that this dataset aims to highlight.
 
 The dataset includes **10 specific scenes**, containing **10 object classes**, with **20 objects per class**. This setup ensures a diverse set of images for robust classification tasks.
 
