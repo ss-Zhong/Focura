@@ -1,5 +1,8 @@
 # ✨Focura✨
 
+![GitHub stars](https://img.shields.io/github/stars/ss-Zhong/Focura?style=flat&color=5caaf3)
+![License](https://img.shields.io/github/license/ss-Zhong/Focura)
+
 <img src="img/README/Focura_sample.png" style="zoom:67%;" />
 
 **Focura** is a dataset designed for image classification tasks, focusing on the clear separation of foreground and background elements. The name "Focura" is a fusion of "Focus" and "Aura," symbolizing the clarity and distinction between the foreground and background that this dataset aims to highlight.
@@ -15,7 +18,7 @@ To use the dataset, simply utilize the `Focura` class in `Focura.py`, which func
 ### Build Subset (Only Build Once)
 
   ```python
-  bs = Focura.__build_subset__(Focura_PATH, output_dir=Focura._subset_root_, export=True)
+  bs = Focura.__build_subset__(Focura_PATH, output_dir=Focura._subset_root_, export=True, change_light=True)
   for scene_img in bs:
       pass
   ```
@@ -31,7 +34,8 @@ To use the dataset, simply utilize the `Focura` class in `Focura.py`, which func
 - To load all scenes:
 
   ```python
-  scene_list = Focura.__list_scene__('/share/Focura')
+  Focura._subset_root_ = PATH_to_SubFocura # e.g. "./subFocura"
+  scene_list = Focura.__list_scene__('./')
   for scene in scene_list:
       Focura._scene_ = scene
       ...
@@ -40,6 +44,7 @@ To use the dataset, simply utilize the `Focura` class in `Focura.py`, which func
 - To load selected scenes:
 
   ```python
+  Focura._subset_root_ = PATH_to_SubFocura # e.g. "./subFocura"
   scene_list = ["snow", ...]
   for scene in scene_list:
       Focura._scene_ = scene

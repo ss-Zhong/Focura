@@ -3,13 +3,13 @@ import random
 import os
 from PIL import Image
 import torch
+from tqdm import tqdm
 
 class Focura(torch.utils.data.Dataset):
     _scene_ = ''
     _scene_root_ = ''
-
     # path to the Focura subset with different scenes
-    _subset_root_ = '/share/Focura/subFocura/'
+    _subset_root_ = './subFocura/'
 
     def __init__(self, root, n_way=5, n_shot=5, n_query=15, n_episodes=50, transform=None):
         super().__init__()
@@ -76,7 +76,7 @@ class Focura(torch.utils.data.Dataset):
         return scene_list
     
     @staticmethod
-    def __build_subset__(focura_root, scene_choose = None, output_dir = 'output/subFocura', export = False):
+    def __build_subset__(focura_root, scene_choose = None, output_dir = 'output/subFocura', export = False, change_light = False):
         
         Focura._scene_root_ = focura_root + '/scene'
         object_dir = focura_root + '/object_224'
@@ -103,7 +103,7 @@ class Focura(torch.utils.data.Dataset):
                 scene = Image.open(file_path)
 
             print(f"Build sub focura base on {filename}")
-            for subdir, dirs, files in os.walk(object_dir):
+            for subdir, dirs, files in tqdm(os.walk(object_dir)):
                 for file in files:
                     if file.lower().endswith(('jpg', 'jpeg', 'png', 'bmp', 'gif')):
                         scene_width, scene_height = scene.size
@@ -135,6 +135,13 @@ class Focura(torch.utils.data.Dataset):
                         # Paste the object onto the scene at a random location
                         cropped_scene.paste(obj, (random_x, random_y), obj.convert("RGBA"))
 
+                        # Apply lighting changes to simulate different lighting conditions
+                        if change_light:
+                            from PIL import ImageEnhance
+                            brightness_factor = random.uniform(0.2, 1)
+                            enhancer = ImageEnhance.Brightness(cropped_scene)
+                            cropped_scene = enhancer.enhance(brightness_factor)
+
                         relative_path = os.path.relpath(subdir, object_dir)
 
                         if export:
@@ -153,15 +160,16 @@ class Focura(torch.utils.data.Dataset):
 if __name__ == '__main__':
 
     # path to the Focura dataset
-    Focura_PATH = '/share/Focura'
+    Focura_PATH = '.'
     
     # build subset with export
-    bs = Focura.__build_subset__(Focura_PATH, output_dir=Focura._subset_root_, export=True)
+    bs = Focura.__build_subset__(Focura_PATH, output_dir=Focura._subset_root_, export=True, change_light=True)
     for scene_img in bs:
         pass
 
     # # use the dataset
-    # scene_list = Focura.__list_scene__('/share/Focura')
+    # Focura._subset_root_ = "./subFocura/"
+    # scene_list = Focura.__list_scene__('./')
     # for scene in scene_list:
     #     Focura._scene_ = scene
     #     # ...
