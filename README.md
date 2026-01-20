@@ -1,6 +1,6 @@
 # ✨Focura✨
 
-> 🎉🎉 Congratulations! Our paper **"Glasses: Enabling Fast Environment-aware Few-Shot Learning via Device-Cloud Collaboration"** has been accepted to **The Web Conference 2026 (WWW'26)**! 
+> 🎉🎉 Congratulations! Our paper **"Glasses: Enabling Fast Environment-aware Few-Shot Learning via Device-Cloud Collaboration"** has been accepted to **the ACM Web Conference 2026 (WWW '26)**! 
 
 <p align="center">
   <a href="https://github.com/ss-Zhong/Focura/stargazers"><img src="https://img.shields.io/github/stars/ss-Zhong/Focura?style=for-the-badge&color=5caaf3" alt="Stars"></a>
